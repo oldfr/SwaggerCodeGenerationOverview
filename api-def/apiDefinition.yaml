@@ -15,7 +15,7 @@ paths:
           description: "error detail in case of Bad request"
           schema:
             $ref: "#/definitions/error"
-      operationId: testing
+      operationId: getStudentDetail
       parameters:
         - in: path
           name: student_id
