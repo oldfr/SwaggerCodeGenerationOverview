@@ -1,0 +1,51 @@
+paths:
+  "/Student/{student_id}":
+    get:
+      tags:
+        - Student Detail
+      summary: "API to get student details by his/her Id"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: "student details"
+          schema:
+            $ref: "#/definitions/Student"
+        "400":
+          description: "error detail in case of Bad request"
+          schema:
+            $ref: "#/definitions/error"
+      operationId: testing
+      parameters:
+        - in: path
+          name: student_id
+          type: string
+          required: true
+      x-auth-type: "Application & Application User"
+      x-throttling-tier: unlimited
+
+definitions:
+  error:
+    properties:
+      error_description:
+        description: Error Description
+        type: string
+      error:
+        description: Error Code
+        type: string
+  Student:
+    properties:
+      id:
+        description: student Id
+        type: integer
+      name:
+        description: student name
+        type: string
+      age:
+        description: age of Student
+        type: integer
+swagger: "2.0"
+info:
+  description: Project to perform operation on student records
+  title : studentOperation
+  version: 1.0.0
