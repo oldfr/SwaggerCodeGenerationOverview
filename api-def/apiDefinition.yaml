@@ -15,11 +15,45 @@ paths:
           description: "error detail in case of Bad request"
           schema:
             $ref: "#/definitions/error"
+        "500":
+          description: "error detail in case of server error"
+          schema:
+            $ref: "#/definitions/error"
       operationId: getStudentDetail
       parameters:
         - in: path
           name: student_id
           type: string
+          required: true
+      x-auth-type: "Application & Application User"
+      x-throttling-tier: unlimited
+
+  "/Student":
+    post:
+      tags:
+        - Student Detail
+      summary: "API to create student details by his/her Id"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: "student details"
+          schema:
+            $ref: "#/definitions/Student"
+        "400":
+          description: "error detail in case of Bad request"
+          schema:
+            $ref: "#/definitions/error"
+        "500":
+          description: "error detail in case of server error"
+          schema:
+            $ref: "#/definitions/error"
+      operationId: createStudentDetail
+      parameters:
+        - in: body
+          name: student
+          schema:
+            $ref: "#/definitions/Student"
           required: true
       x-auth-type: "Application & Application User"
       x-throttling-tier: unlimited

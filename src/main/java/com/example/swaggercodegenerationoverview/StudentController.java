@@ -15,6 +15,11 @@ public class StudentController implements StudentApi {
         student.setAge(27);
         ResponseEntity<Student> responseEntity = ResponseEntity.ok(student);
         return responseEntity;
-//        return StudentApi.super.getStudentDetail(studentId);
+    }
+
+    @Override
+    public ResponseEntity<Student> createStudentDetail(Student student) {
+        // create student record in DB and return same
+        return ResponseEntity.ok(student);
     }
 }
