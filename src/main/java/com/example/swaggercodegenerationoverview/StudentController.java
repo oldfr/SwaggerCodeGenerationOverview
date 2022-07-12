@@ -3,7 +3,9 @@ package com.example.swaggercodegenerationoverview;
 import com.example.swaggercodegenerationoverview.api.StudentApi;
 import com.example.swaggercodegenerationoverview.model.Student;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class StudentController implements StudentApi {
 
     @Override
